@@ -105,7 +105,7 @@ namespace TrafficWarden
             //catch any errors that might arise while loading content
             try
             {
-                menuBackTEX = Content.Load<Texture2D>("TrafLite1");
+                menuBackTEX = Content.Load<Texture2D>("TrafLite");
             }
             catch (ContentLoadException e)
             {

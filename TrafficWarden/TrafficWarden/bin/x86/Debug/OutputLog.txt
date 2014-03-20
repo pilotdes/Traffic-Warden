@@ -1,15 +1,17 @@
-Thursday, March 20, 2014, 12:22:04 PM
-12:22:04 PM Starting Program
-12:22:05 PM Finished Starting Program
-12:22:05 PM Initializing Program
-12:22:06 PM Loading Content
-12:22:06 PM Finished Loading Content
-12:22:06 PM Creating Menu
-12:22:06 PM Finished Creating Menu
-12:22:06 PM Finished Initializing Program
-12:22:08 PM Play_Button Clicked
-12:22:08 PM Settings_Button Clicked
-12:22:10 PM Exit_Button Clicked
-12:22:10 PM Exiting Program...
-12:22:10 PM Unloading Content
-12:22:10 PM Finished Unloading Content
+Thursday, March 20, 2014, 9:29:28 PM
+9:29:28 PM Starting Program
+9:29:29 PM Finished Starting Program
+9:29:29 PM Initializing Program
+9:29:30 PM Loading Content
+9:29:30 PM Finished Loading Content
+9:29:30 PM Creating Menu
+9:29:30 PM Finished Creating Menu
+9:29:30 PM Finished Initializing Program
+9:29:32 PM Settings_Button Clicked
+
+9:29:33 PM **********EXCEPTION**********
+9:29:33 PM See ErrorLog For Details
+
+9:29:33 PM Exiting Program...
+9:29:33 PM Unloading Content
+9:29:33 PM Finished Unloading Content

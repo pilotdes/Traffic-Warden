@@ -105,7 +105,7 @@ namespace TrafficWarden
             //catch any errors that might arise while loading content
             try
             {
-                menuBackTEX = Content.Load<Texture2D>("TrafLite");
+                menuBackTEX = Content.Load<Texture2D>("TrafLite1");
             }
             catch (ContentLoadException e)
             {
@@ -284,7 +284,8 @@ namespace TrafficWarden
         }
         private Boolean printToLog(Exception e, UnhandledExceptionEventArgs args)
         {
-            TextWriter tw = new StreamWriter("ErrorLog.txt");
+            string error = "ErrorLog" + DateTime.Now.ToFileTime() + ".txt";
+            TextWriter tw = new StreamWriter(error);
             tw.WriteLine(DateTime.Now);
             tw.WriteLine(e);
             tw.WriteLine("Is Terminating: " + args.IsTerminating);

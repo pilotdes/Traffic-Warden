@@ -1,0 +1,36 @@
+////////////////////////////////////////////////////////////////
+    Date: 18/03/14 11:59:18 AM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.7.2407.1915
+ Message: The GraphicsDevice property cannot be used before Initialize has been called.
+////////////////////////////////////////////////////////////////
+   at Microsoft.Xna.Framework.DrawableGameComponent.get_GraphicsDevice()
+   at TomShane.Neoforce.Controls.Manager.get_GraphicsDevice()
+   at TomShane.Neoforce.Controls.Manager.Dispose(Boolean disposing)
+   at Microsoft.Xna.Framework.GameComponent.Finalize()
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+    Date: 18/03/14 12:03:46 PM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.7.2407.1915
+ Message: The GraphicsDevice property cannot be used before Initialize has been called.
+////////////////////////////////////////////////////////////////
+   at Microsoft.Xna.Framework.DrawableGameComponent.get_GraphicsDevice()
+   at TomShane.Neoforce.Controls.Manager.get_GraphicsDevice()
+   at TomShane.Neoforce.Controls.Manager.Dispose(Boolean disposing)
+   at Microsoft.Xna.Framework.GameComponent.Finalize()
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+    Date: 18/03/14 12:04:27 PM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.7.2407.1915
+ Message: The GraphicsDevice property cannot be used before Initialize has been called.
+////////////////////////////////////////////////////////////////
+   at Microsoft.Xna.Framework.DrawableGameComponent.get_GraphicsDevice()
+   at TomShane.Neoforce.Controls.Manager.get_GraphicsDevice()
+   at TomShane.Neoforce.Controls.Manager.Dispose(Boolean disposing)
+   at Microsoft.Xna.Framework.GameComponent.Finalize()
+////////////////////////////////////////////////////////////////
+

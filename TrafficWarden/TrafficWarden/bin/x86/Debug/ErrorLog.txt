@@ -1,0 +1,12 @@
+20/03/14 12:14:50 PM
+Microsoft.Xna.Framework.Content.ContentLoadException: Error loading "TrafLit1e". File not found. ---> System.IO.FileNotFoundException: Error loading "Content\TrafLit1e.xnb". File not found.
+   at Microsoft.Xna.Framework.TitleContainer.OpenStream(String name)
+   at Microsoft.Xna.Framework.Content.ContentManager.OpenStream(String assetName)
+   --- End of inner exception stack trace ---
+   at Microsoft.Xna.Framework.Content.ContentManager.OpenStream(String assetName)
+   at Microsoft.Xna.Framework.Content.ContentManager.ReadAsset[T](String assetName, Action`1 recordDisposableObject)
+   at Microsoft.Xna.Framework.Content.ContentManager.Load[T](String assetName)
+   at TrafficWarden.Game1.LoadContent() in c:\Users\BomberDes\Documents\Visual Studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\Game1.cs:line 90
+Is Terminating: True
+
+Please email a copy of this errorlog and the Outputlog to Bomberdes@live.com, along with a description of what you were doing at the time, and the developer will get right on to fixing the problem

@@ -1,0 +1,15 @@
+Thursday, March 20, 2014, 12:22:04 PM
+12:22:04 PM Starting Program
+12:22:05 PM Finished Starting Program
+12:22:05 PM Initializing Program
+12:22:06 PM Loading Content
+12:22:06 PM Finished Loading Content
+12:22:06 PM Creating Menu
+12:22:06 PM Finished Creating Menu
+12:22:06 PM Finished Initializing Program
+12:22:08 PM Play_Button Clicked
+12:22:08 PM Settings_Button Clicked
+12:22:10 PM Exit_Button Clicked
+12:22:10 PM Exiting Program...
+12:22:10 PM Unloading Content
+12:22:10 PM Finished Unloading Content

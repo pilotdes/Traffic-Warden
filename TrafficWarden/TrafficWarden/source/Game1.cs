@@ -1,25 +1,17 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Windows.Forms;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using Nuclex.Input;
 using Nuclex.UserInterface;
-using Nuclex.Input.Devices;
 using Nuclex.UserInterface.Controls;
 using Nuclex.UserInterface.Controls.Desktop;
 using ButtonState = Microsoft.Xna.Framework.Input.ButtonState;
 using Screen = Nuclex.UserInterface.Screen;
 
-namespace TrafficWarden
+namespace TrafficWarden.source
 {
     /// <summary>
     /// This is the main type for your game

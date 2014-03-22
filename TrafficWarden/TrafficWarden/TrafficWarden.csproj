@@ -88,6 +88,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="source\Game1.cs" />
     <Compile Include="source\Screen Manager\GameScreen.cs" />
+    <Compile Include="source\Screen Manager\InputState.cs" />
+    <Compile Include="source\Screen Manager\ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
@@ -218,6 +219,8 @@ namespace TrafficWarden.source.Screen_Manager
         public virtual void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                       bool coveredByOtherScreen)
         {
+            Config.Default.SettingsSaving +=DefaultOnSettingsSaving;
+
             this.otherScreenHasFocus = otherScreenHasFocus;
 
             if (isExiting)
@@ -259,6 +262,11 @@ namespace TrafficWarden.source.Screen_Manager
                     screenState = ScreenState.Active;
                 }
             }
+        }
+
+        private void DefaultOnSettingsSaving(object sender, CancelEventArgs cancelEventArgs)
+        {
+
         }
 
 
@@ -329,7 +337,6 @@ namespace TrafficWarden.source.Screen_Manager
                 isExiting = true;
             }
         }
-
 
         #endregion
     }

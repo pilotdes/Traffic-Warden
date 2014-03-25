@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using TrafficWarden.source.Screens;
 using TrafficWarden.source.Screen_Manager;
 
 namespace TrafficWarden.source
@@ -14,6 +15,7 @@ namespace TrafficWarden.source
 
         public Control()
         {
+            OutputLogging.writeOutput("Initializing Control Class");
             Content.RootDirectory = "Content";
 
             graphics = new GraphicsDeviceManager(this);
@@ -29,6 +31,9 @@ namespace TrafficWarden.source
             Components.Add(screenManager);
 
             // Activate the first screens.
+            screenManager.AddScreen(new SplashScreen(), null);
+            
+            OutputLogging.writeOutput("Finished Initializing Control Class");
         }
     }
 }

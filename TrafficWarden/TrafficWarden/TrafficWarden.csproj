@@ -94,9 +94,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="source\Control.cs" />
     <Compile Include="source\Game1.cs" />
+    <Compile Include="source\OutputLogging.cs" />
     <Compile Include="source\Screen Manager\GameScreen.cs" />
     <Compile Include="source\Screen Manager\InputState.cs" />
     <Compile Include="source\Screen Manager\ScreenManager.cs" />
+    <Compile Include="source\Screens\SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -132,9 +134,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="source\Screens\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Config.settings">

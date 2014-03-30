@@ -15,6 +15,7 @@ namespace TrafficWarden.source
 
         public Control()
         {
+            OutputLogging.initOutputting();
             OutputLogging.writeOutput("Initializing Control Class");
             Content.RootDirectory = "Content";
 
@@ -31,7 +32,7 @@ namespace TrafficWarden.source
             Components.Add(screenManager);
 
             // Activate the first screens.
-            screenManager.AddScreen(new SplashScreen(), null);
+            screenManager.AddScreen(new ProtoGameScreen(), null);
             
             OutputLogging.writeOutput("Finished Initializing Control Class");
         }

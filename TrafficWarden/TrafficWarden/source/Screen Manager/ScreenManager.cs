@@ -79,6 +79,7 @@ namespace TrafficWarden.source.Screen_Manager
             // we must set EnabledGestures before we can query for them, but
             // we don't assume the game wants to read them.
             TouchPanel.EnabledGestures = GestureType.None;
+            OutputLogging.writeOutput("Finished Initializing ScreenManager Class");
         }
 
 

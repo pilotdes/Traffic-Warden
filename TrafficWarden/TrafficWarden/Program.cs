@@ -13,16 +13,8 @@ namespace TrafficWarden
         {
             using (Control game = new Control())
             {
-                OutputLogging.initOutputting();
-                OutputLogging.writeOutput("Starting Application");
-                game.Exiting += GameOnExiting;
                 game.Run();
             }
-        }
-
-        private static void GameOnExiting(object sender, EventArgs eventArgs)
-        {
-            OutputLogging.writeOutput("Closing Application");
         }
     }
 #endif

@@ -2,36 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Nuclex.UserInterface.Controls;
+using Microsoft.Xna.Framework.Content;
 using TrafficWarden.source.Screen_Manager;
-using TrafficWarden.source;
 
 namespace TrafficWarden.source.Screens
 {
-    class SplashScreen : GameScreen
+    class ProtoGameScreen : GameScreen
     {
-        public SplashScreen()
+        public ProtoGameScreen()
         {
-            Console.WriteLine("testing");
-            OutputLogging.writeOutput("Starting Splashscreen");
+            OutputLogging.writeOutput("Starting Prototypical Game Screen");
         }
         public override void LoadContent()
         {
             base.LoadContent();
         }
 
-        public override void Draw(GameTime gameTime)
+        public override void UnloadContent()
         {
-            GraphicsDevice graphics = ScreenManager.GraphicsDevice;
-            
-
-            graphics.Clear(Color.Goldenrod);
-            base.Draw(gameTime);
+            base.UnloadContent();
         }
 
         public override void HandleInput(InputState input)
@@ -44,9 +35,12 @@ namespace TrafficWarden.source.Screens
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
 
-        public override void UnloadContent()
+        public override void Draw(GameTime gameTime)
         {
-            base.UnloadContent();
+            GraphicsDevice GD = ScreenManager.GraphicsDevice;
+            SpriteBatch SB = ScreenManager.SpriteBatch;
+            GD.Clear(Color.Gold);
+            base.Draw(gameTime);
         }
     }
 }

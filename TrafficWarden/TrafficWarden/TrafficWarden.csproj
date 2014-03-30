@@ -77,6 +77,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlXml" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -98,6 +99,7 @@
     <Compile Include="source\Screen Manager\GameScreen.cs" />
     <Compile Include="source\Screen Manager\InputState.cs" />
     <Compile Include="source\Screen Manager\ScreenManager.cs" />
+    <Compile Include="source\Screens\ProtoGameScreen.cs" />
     <Compile Include="source\Screens\SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>

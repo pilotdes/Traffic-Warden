@@ -65,6 +65,9 @@
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Input.Touch, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Video, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="mscorlib" />
     <Reference Include="Nuclex.Input">
       <HintPath>..\..\..\..\..\..\Downloads\nuclex-framework-r1404-binaries\References\framework\xna-4.0-x86\Nuclex.Input.dll</HintPath>
@@ -99,8 +102,11 @@
     <Compile Include="source\Screen Manager\GameScreen.cs" />
     <Compile Include="source\Screen Manager\InputState.cs" />
     <Compile Include="source\Screen Manager\ScreenManager.cs" />
+    <Compile Include="source\Screens\AI\TrafficFlowSystem.cs" />
+    <Compile Include="source\Screens\Entitys\IntersectionInstance.cs" />
     <Compile Include="source\Screens\ProtoGameScreen.cs" />
     <Compile Include="source\Screens\SplashScreen.cs" />
+    <Compile Include="source\Screens\AI\TrafficLightSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -139,6 +145,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Config.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Config.Designer.cs</LastGenOutput>

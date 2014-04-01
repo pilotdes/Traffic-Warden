@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TrafficWarden.source.Screen_Manager.GameScreen" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAEBCAAARQAgAEEgIAAAAADAAAAA4AAgAGAkYIBAY=</HashCode>
+      <FileName>source\Screen Manager\GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screen_Manager.InputState" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAUBAAAAAAAAAAAACQAAFYAAAAAEAIAAAEAAAAEA=</HashCode>
+      <FileName>source\Screen Manager\InputState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screen_Manager.ScreenManager" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAVEAgAAAgAwAAAAAAAAAAAAAAiBAERAAAgAACCEQ=</HashCode>
+      <FileName>source\Screen Manager\ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screens.AI.TrafficFlowSystem" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>source\Screens\AI\TrafficFlowSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screens.TrafficLightSystem" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>source\Screens\AI\TrafficLightSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screens.ProtoGameScreen" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEACAgAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>source\Screens\ProtoGameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screens.SplashScreen" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEACAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>source\Screens\SplashScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Screens.Entitys.IntersectionInstance" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQQAAAAAAQgAAoBAAAAABAAAAAAAACAoAAAIAQBAAAA=</HashCode>
+      <FileName>source\Screens\Entitys\IntersectionInstance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TrafficWarden.source.Control" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAAA=</HashCode>
+      <FileName>source\Control.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.Game1" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASBEEgAAAABAwEgAAAAACAAAAAAAEhgIBAAgAAAACQ=</HashCode>
+      <FileName>source\Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.source.OutputLogging" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>source\OutputLogging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrafficWarden.Program" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TrafficWarden.source.Screen_Manager.ScreenState" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAEAAA=</HashCode>
+      <FileName>source\Screen Manager\GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -18,21 +18,27 @@ namespace TrafficWarden.source.Screens
         private TrafficFlowSystem AIflow;
         private TrafficLightSystem AISystem;
         private IntersectionInstance intersection;
-
+        private Boolean firsttime;
         public ProtoGameScreen(Enum Difficulty)
         {
             OutputLogging.writeOutput("Starting Prototypical Game Screen");
             AIflow = new TrafficFlowSystem(Difficulty);
             AISystem=new TrafficLightSystem(Difficulty);
-
+            firsttime = true;
         }
         public override void LoadContent()
         {
             ContentManager Content = ScreenManager.Game.Content;
             test = Content.Load<Texture2D>("TrafLite");
+            init();
             base.LoadContent();
         }
 
+        private void init()
+        {
+            SpriteBatch SB = ScreenManager.SpriteBatch;
+            intersection = new IntersectionInstance(test, SB);
+        }
         public override void UnloadContent()
         {
             base.UnloadContent();
@@ -58,8 +64,8 @@ namespace TrafficWarden.source.Screens
             GraphicsDevice GD = ScreenManager.GraphicsDevice;
             SpriteBatch SB = ScreenManager.SpriteBatch;
             //GD.Clear(Color.Gold);
-            intersection = new IntersectionInstance(test, SB);
-            intersection.Draw(gameTime);
+                firsttime = false;
+            //intersection.Draw(gameTime);
             base.Draw(gameTime);
         }
     }

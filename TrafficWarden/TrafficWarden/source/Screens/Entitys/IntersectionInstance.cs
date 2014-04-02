@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TrafficWarden.source.Screens.Entitys
 {
-
+    #region Enumerations
     public enum IntersectionType
     {
         Crossroads,
@@ -31,6 +31,7 @@ namespace TrafficWarden.source.Screens.Entitys
         Tarmac,
         Steel,
     }
+    #endregion
 
     /// <summary>
     /// This class is the control class for an individual intersection with traffic lights
@@ -103,7 +104,23 @@ namespace TrafficWarden.source.Screens.Entitys
         //    set { IntersectionSprite = value; }
         //}
 
-        public SpriteBatch SpriteBatch;
+        public int PositionX 
+        {
+            get { return (PositionX); }
+            set { PositionX = value; }
+        }
+
+        public int PositionY
+        {
+            get { return (PositionY); }
+            set { PositionY = value; }
+        }
+
+        public SpriteBatch SpriteBatch
+        {
+            get { return (SpriteBatch); }
+            set { SpriteBatch = value; }
+        }
 
         #region Fields for interfaces
 
@@ -152,7 +169,7 @@ namespace TrafficWarden.source.Screens.Entitys
         public void Draw(GameTime gameTime)
         {
             this.SpriteBatch.Begin();
-            this.SpriteBatch.Draw(IntersectionSprite, new Rectangle(50,50,100,100),Color.White);
+            this.SpriteBatch.Draw(IntersectionSprite, new Rectangle(50,50, 200,200), Color.White);
             this.SpriteBatch.End();
             //throw new NotImplementedException();
         }

@@ -18,3 +18,7 @@ c:\users\bomberdes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWa
 c:\users\bomberdes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\nunit.framework.dll
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\TrafLite.xnb
 C:\Users\BomberDes\Documents\Visual Studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\TrafficWarden.exe.config
+C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\artemis.dll
+C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\ParallelTasks.dll
+C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\artemis.xml
+C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\ParallelTasks.xml

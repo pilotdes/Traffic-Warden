@@ -42,10 +42,12 @@ namespace TrafficWarden.source
         {
             ThreadStart childref = new ThreadStart(delegate
             {
+                Thread.BeginCriticalRegion();
                 using (var file = new StreamWriter("Output.txt", true))
                 {
                     file.WriteLine(DateTime.Now.ToLongTimeString() + " -- " + output);
                 }
+                Thread.EndCriticalRegion();
             });
             Thread childThread = new Thread(childref);
             childThread.Start();

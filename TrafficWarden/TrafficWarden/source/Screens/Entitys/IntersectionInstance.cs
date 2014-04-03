@@ -1,11 +1,18 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Runtime.Remoting.Messaging;
+using System.Windows.Forms;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using TrafficWarden.source.Screen_Manager;
+using Artemis;
 
 namespace TrafficWarden.source.Screens.Entitys
 {
+
     #region Enumerations
+
     public enum IntersectionType
     {
         Crossroads,
@@ -31,18 +38,30 @@ namespace TrafficWarden.source.Screens.Entitys
         Tarmac,
         Steel,
     }
+
     #endregion
 
     /// <summary>
     /// This class is the control class for an individual intersection with traffic lights
     /// it identifies to its respective intersection via the IntersectionIdentifier variable
     /// </summary>
-    internal class IntersectionInstance : IDrawable, IUpdateable
+    internal class IntersectionInstance
     {
-        private GraphicsDeviceManager graphics;
         #region Fields
 
-        //Custom Getters and Setters
+        #region Event Handlers
+
+        #endregion
+
+        #region Interface Getters and Setters
+
+        #endregion
+
+        #region Custom Getters and Setters
+
+        /// <summary>
+        /// The Unique identifier for the intersection instance
+        /// </summary>
         public string IntersectionIdentifier
         {
             get { return IntersectionIdentifier; }
@@ -73,10 +92,10 @@ namespace TrafficWarden.source.Screens.Entitys
         /// lights, and if it isn't, will then bypass all the players
         /// input
         /// </summary>
-        public Boolean HasLights
+        public Boolean IsControlled
         {
-            get { return (HasLights); }
-            set { HasLights = value; }
+            get { return (IsControlled); }
+            set { IsControlled = value; }
         }
 
         /// <summary>
@@ -92,48 +111,41 @@ namespace TrafficWarden.source.Screens.Entitys
             set { IntersectionSurface = value; }
         }
 
+        /// <summary>
+        /// Sets the current State of the lights
+        /// </summary>
         public LightState CurrentLightState
         {
             get { return (CurrentLightState); }
             set { CurrentLightState = value; }
         }
 
-        public Texture2D IntersectionSprite;
-        //{
-        //    get { return (IntersectionSprite); }
-        //    set { IntersectionSprite = value; }
-        //}
+        /// <summary>
+        /// Sets the sprite to use as the intersection
+        /// </summary>
+        public Texture2D IntersectionSprite
+        {
+            get { return (IntersectionSprite); }
+            set { IntersectionSprite = value; }
+        }
 
-        public int PositionX 
+        /// <summary>
+        /// Sets the Position of the intersection along the X axis
+        /// </summary>
+        public int PositionX
         {
             get { return (PositionX); }
             set { PositionX = value; }
         }
 
+        /// <summary>
+        /// Sets the position of the intersection along the Y axis
+        /// </summary>
         public int PositionY
         {
             get { return (PositionY); }
             set { PositionY = value; }
         }
-
-        public SpriteBatch SpriteBatch
-        {
-            get { return (SpriteBatch); }
-            set { SpriteBatch = value; }
-        }
-
-        #region Fields for interfaces
-
-        //Getters and Setters for IDrawable
-        public bool Visible { get; private set; }
-
-        public int DrawOrder { get; private set; }
-        //
-
-        //Getters and setters for IUpdateable
-        public bool Enabled { get; private set; }
-        public int UpdateOrder { get; private set; }
-        //
 
         #endregion
 
@@ -141,62 +153,40 @@ namespace TrafficWarden.source.Screens.Entitys
 
         #region Event Handlers
 
-        public event EventHandler<EventArgs> OnLightStateChanged;
-        public event EventHandler<EventArgs> OnIntersectionSurfaceChanged;
-
-        public event EventHandler<EventArgs> VisibleChanged;
-        public event EventHandler<EventArgs> DrawOrderChanged;
-
-        public event EventHandler<EventArgs> EnabledChanged;
-        public event EventHandler<EventArgs> UpdateOrderChanged;
-
         #endregion
 
-        #region Initialization 
+        #region Initialization
 
-        public IntersectionInstance(Texture2D sprite, SpriteBatch spriteBatch)
+        public IntersectionInstance(int X, int Y, IntersectionType type, IntersectionSurface surface, 
+            LightState initialLightState,  Boolean isControlledL, string ID, int numLanes)
         {
-            this.IntersectionSprite = sprite;
-            this.SpriteBatch = spriteBatch;
-            this.Visible = true;
-            this.Enabled = true;
-        }
+            #region Setters
+            PositionX =X;
+            PositionY=Y;
+            IntersectionType = type;
+            IntersectionSurface = surface;
+            CurrentLightState = initialLightState;
+            IsControlled = isControlledL;
+            IntersectionIdentifier = ID;
+            NumberOfLanes = numLanes;
+            #endregion
 
+        }
         #endregion
 
         #region Methods
 
-        public void Draw(GameTime gameTime)
-        {
-            this.SpriteBatch.Begin();
-            this.SpriteBatch.Draw(IntersectionSprite, new Rectangle(50,50, 200,200), Color.White);
-            this.SpriteBatch.End();
-            //throw new NotImplementedException();
-        }
+        #region Draw and Update Methods
 
-        public void Update(GameTime gameTime)
-        {
-            //TODO check mouse input
-
-            //TODO implement an OnLightStateChanged method/EventHandler
-            OnLightStateChanged += OnOnLightStateChanged;
-            //TODO implement an OnIntersectionSurfaceChanged method/EventHandler
-            OnIntersectionSurfaceChanged += OnOnIntersectionSurfaceChanged;
-
-            throw new NotImplementedException();
-        }
+        #endregion
 
         #region EventHandler Methods
+
         private void OnOnLightStateChanged(object sender, EventArgs eventArgs)
         {
             //TODO change the CurrentLightState field to the light state
             //TODO add a timing thread to set when the lights change from yellow to red
             //in a 50kph zone, the lights should take 4 seconds to change from yellow to red
-            throw new NotImplementedException();
-        }
-
-        private void OnOnIntersectionSurfaceChanged(object sender, EventArgs eventArgs)
-        {
             throw new NotImplementedException();
         }
 
@@ -206,9 +196,10 @@ namespace TrafficWarden.source.Screens.Entitys
 
         public void LightTimer()
         {
-
         }
+
         #endregion
+
         #endregion
     }
 }

@@ -43,7 +43,7 @@ namespace TrafficWarden.source
             Components.Add(screenManager);
 
             // Activate the first screens.
-            screenManager.AddScreen(new ProtoGameScreen(Difficulty.Easy), null);
+            screenManager.AddScreen(new ProtoGameScreen(Difficulty.Easy, this), null);
             
             OutputLogging.writeOutput("Finished Initializing Control Class");
         }

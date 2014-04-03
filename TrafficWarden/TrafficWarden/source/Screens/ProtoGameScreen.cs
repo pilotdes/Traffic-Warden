@@ -19,7 +19,7 @@ namespace TrafficWarden.source.Screens
         private TrafficLightSystem AISystem;
         private IntersectionInstance intersection;
         private Boolean firsttime;
-        public ProtoGameScreen(Enum Difficulty)
+        public ProtoGameScreen(Enum Difficulty, Game game)
         {
             OutputLogging.writeOutput("Starting Prototypical Game Screen");
             AIflow = new TrafficFlowSystem(Difficulty);
@@ -30,14 +30,7 @@ namespace TrafficWarden.source.Screens
         {
             ContentManager Content = ScreenManager.Game.Content;
             test = Content.Load<Texture2D>("TrafLite");
-            init();
             base.LoadContent();
-        }
-
-        private void init()
-        {
-            SpriteBatch SB = ScreenManager.SpriteBatch;
-            intersection = new IntersectionInstance(test, SB);
         }
         public override void UnloadContent()
         {
@@ -46,14 +39,11 @@ namespace TrafficWarden.source.Screens
 
         public override void HandleInput(InputState input)
         {
-            
             base.HandleInput(input);
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-            //IntersectionInstance system = new IntersectionInstance();
-     
             AIflow.Update();
             AISystem.Update();
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
@@ -63,9 +53,10 @@ namespace TrafficWarden.source.Screens
         {
             GraphicsDevice GD = ScreenManager.GraphicsDevice;
             SpriteBatch SB = ScreenManager.SpriteBatch;
-            //GD.Clear(Color.Gold);
-                firsttime = false;
-            //intersection.Draw(gameTime);
+            for (int i = 0; i < Entitys.Dictionarys.EntityDict.ListSize(); i++)
+            {
+                //TODO loop untill all intersection instances have been drawn
+            }
             base.Draw(gameTime);
         }
     }

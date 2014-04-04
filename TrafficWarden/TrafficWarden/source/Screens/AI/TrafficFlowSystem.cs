@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TrafficWarden.source.Screens.AI
 {
-    class TrafficFlowSystem
+    internal class TrafficFlowSystem
     {
         private Enum Difficulty;
 
@@ -14,9 +14,9 @@ namespace TrafficWarden.source.Screens.AI
             // TODO: Complete member initialization
             this.Difficulty = Difficulty;
         }
+
         public void Update()
         {
-            
         }
     }
 }

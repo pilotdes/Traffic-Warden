@@ -10,7 +10,7 @@ using TrafficWarden.source.Screen_Manager;
 
 namespace TrafficWarden.source
 {
-    class Control : Game
+    internal class Control : Game
     {
         private enum Difficulty
         {
@@ -18,14 +18,19 @@ namespace TrafficWarden.source
             Medium,
             Hard,
         }
-        GraphicsDeviceManager graphics;
-        ScreenManager screenManager;
-        SpriteBatch spriteBatch;
-        ContentManager contentManager;
+
+        private GraphicsDeviceManager graphics;
+        private ScreenManager screenManager;
+        private SpriteBatch spriteBatch;
+        private ContentManager contentManager;
         private GameComponent component;
 
         public Control()
         {
+        #if WINDOWS
+            IsMouseVisible = true;
+        #endif
+
             OutputLogging.initOutputting();
             OutputLogging.writeOutput("Initializing Control Class");
             Content.RootDirectory = "Content";
@@ -44,7 +49,7 @@ namespace TrafficWarden.source
 
             // Activate the first screens.
             screenManager.AddScreen(new ProtoGameScreen(Difficulty.Easy, this), null);
-            
+
             OutputLogging.writeOutput("Finished Initializing Control Class");
         }
 

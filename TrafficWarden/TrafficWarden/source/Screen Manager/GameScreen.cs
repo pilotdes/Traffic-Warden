@@ -20,7 +20,6 @@ namespace TrafficWarden.source.Screen_Manager
     {
         #region Properties
 
-
         /// <summary>
         /// Normally when one screen is brought up over the top of another,
         /// the first screen will transition off to make room for the new
@@ -34,7 +33,7 @@ namespace TrafficWarden.source.Screen_Manager
             protected set { isPopup = value; }
         }
 
-        bool isPopup = false;
+        private bool isPopup = false;
 
 
         /// <summary>
@@ -47,7 +46,7 @@ namespace TrafficWarden.source.Screen_Manager
             protected set { transitionOnTime = value; }
         }
 
-        TimeSpan transitionOnTime = TimeSpan.Zero;
+        private TimeSpan transitionOnTime = TimeSpan.Zero;
 
 
         /// <summary>
@@ -60,7 +59,7 @@ namespace TrafficWarden.source.Screen_Manager
             protected set { transitionOffTime = value; }
         }
 
-        TimeSpan transitionOffTime = TimeSpan.Zero;
+        private TimeSpan transitionOffTime = TimeSpan.Zero;
 
 
         /// <summary>
@@ -74,7 +73,7 @@ namespace TrafficWarden.source.Screen_Manager
             protected set { transitionPosition = value; }
         }
 
-        float transitionPosition = 1;
+        private float transitionPosition = 1;
 
 
         /// <summary>
@@ -97,7 +96,7 @@ namespace TrafficWarden.source.Screen_Manager
             protected set { screenState = value; }
         }
 
-        ScreenState screenState = ScreenState.TransitionOn;
+        private ScreenState screenState = ScreenState.TransitionOn;
 
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace TrafficWarden.source.Screen_Manager
             protected internal set { isExiting = value; }
         }
 
-        bool isExiting = false;
+        private bool isExiting = false;
 
 
         /// <summary>
@@ -130,7 +129,7 @@ namespace TrafficWarden.source.Screen_Manager
             }
         }
 
-        bool otherScreenHasFocus;
+        private bool otherScreenHasFocus;
 
 
         /// <summary>
@@ -142,7 +141,7 @@ namespace TrafficWarden.source.Screen_Manager
             internal set { screenManager = value; }
         }
 
-        ScreenManager screenManager;
+        private ScreenManager screenManager;
 
 
         /// <summary>
@@ -159,7 +158,7 @@ namespace TrafficWarden.source.Screen_Manager
             internal set { controllingPlayer = value; }
         }
 
-        PlayerIndex? controllingPlayer;
+        private PlayerIndex? controllingPlayer;
 
 
         /// <summary>
@@ -186,30 +185,30 @@ namespace TrafficWarden.source.Screen_Manager
             }
         }
 
-        GestureType enabledGestures = GestureType.None;
-
+        private GestureType enabledGestures = GestureType.None;
 
         #endregion
 
         #region Initialization
 
-
         /// <summary>
         /// Load graphics content for the screen.
         /// </summary>
-        public virtual void LoadContent() { }
+        public virtual void LoadContent()
+        {
+        }
 
 
         /// <summary>
         /// Unload content for the screen.
         /// </summary>
-        public virtual void UnloadContent() { }
-
+        public virtual void UnloadContent()
+        {
+        }
 
         #endregion
 
         #region Update and Draw
-
 
         /// <summary>
         /// Allows the screen to run logic, such as updating the transition position.
@@ -217,9 +216,9 @@ namespace TrafficWarden.source.Screen_Manager
         /// is active, hidden, or in the middle of a transition.
         /// </summary>
         public virtual void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                      bool coveredByOtherScreen)
+            bool coveredByOtherScreen)
         {
-            Config.Default.SettingsSaving +=DefaultOnSettingsSaving;
+            Config.Default.SettingsSaving += DefaultOnSettingsSaving;
 
             this.otherScreenHasFocus = otherScreenHasFocus;
 
@@ -266,14 +265,13 @@ namespace TrafficWarden.source.Screen_Manager
 
         private void DefaultOnSettingsSaving(object sender, CancelEventArgs cancelEventArgs)
         {
-
         }
 
 
         /// <summary>
         /// Helper for updating the screen transition position.
         /// </summary>
-        bool UpdateTransition(GameTime gameTime, TimeSpan time, int direction)
+        private bool UpdateTransition(GameTime gameTime, TimeSpan time, int direction)
         {
             // How much should we move by?
             float transitionDelta;
@@ -281,11 +279,11 @@ namespace TrafficWarden.source.Screen_Manager
             if (time == TimeSpan.Zero)
                 transitionDelta = 1;
             else
-                transitionDelta = (float)(gameTime.ElapsedGameTime.TotalMilliseconds /
-                                          time.TotalMilliseconds);
+                transitionDelta = (float) (gameTime.ElapsedGameTime.TotalMilliseconds/
+                                           time.TotalMilliseconds);
 
             // Update the transition position.
-            transitionPosition += transitionDelta * direction;
+            transitionPosition += transitionDelta*direction;
 
             // Did we reach the end of the transition?
             if (((direction < 0) && (transitionPosition <= 0)) ||
@@ -305,19 +303,21 @@ namespace TrafficWarden.source.Screen_Manager
         /// is only called when the screen is active, and not when some other
         /// screen has taken the focus.
         /// </summary>
-        public virtual void HandleInput(InputState input) { }
+        public virtual void HandleInput(InputState input)
+        {
+        }
 
 
         /// <summary>
         /// This is called when the screen should draw itself.
         /// </summary>
-        public virtual void Draw(GameTime gameTime) { }
-
+        public virtual void Draw(GameTime gameTime)
+        {
+        }
 
         #endregion
 
         #region Public Methods
-
 
         /// <summary>
         /// Tells the screen to go away. Unlike ScreenManager.RemoveScreen, which

@@ -19,6 +19,7 @@ namespace TrafficWarden.source
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         #region Fields
+
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private GuiManager guiManager;
@@ -27,13 +28,14 @@ namespace TrafficWarden.source
         private LabelControl message;
         private Texture2D menuBackTEX;
         private UnhandledExceptionEventHandler handler;
-        TextWriter outWriter = new StreamWriter("OutputLog.txt");
+        private TextWriter outWriter = new StreamWriter("OutputLog.txt");
+
         #endregion
 
         public Game1()
-        {            
+        {
             handler =
-    new UnhandledExceptionEventHandler(Target);
+                new UnhandledExceptionEventHandler(Target);
             try
             {
                 outWriter.WriteLine(DateTime.Now.ToLongDateString() + ", " + DateTime.Now.ToLongTimeString());
@@ -54,6 +56,7 @@ namespace TrafficWarden.source
                 handler.Invoke(e, new UnhandledExceptionEventArgs(e, true));
             }
         }
+
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -102,7 +105,6 @@ namespace TrafficWarden.source
             catch (ContentLoadException e)
             {
                 handler.Invoke(e, new UnhandledExceptionEventArgs(e, true));
-
             }
             // TODO: use this.Content to load your game content here
             PrintToOutput("Finished Loading Content");
@@ -143,7 +145,8 @@ namespace TrafficWarden.source
                 // TODO: Add your update logic here
 
                 base.Update(gameTime);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 handler.Invoke(e, new UnhandledExceptionEventArgs(e, true));
             }
@@ -177,10 +180,12 @@ namespace TrafficWarden.source
         }
 
         #region Button Clicks
+
         private void settingsClickEvent(object sender, EventArgs args)
         {
             PrintToOutput("Settings_Button Clicked");
         }
+
         private void playClickEvent(object sender, EventArgs args)
         {
             PrintToOutput("Play_Button Clicked");
@@ -193,45 +198,39 @@ namespace TrafficWarden.source
             PrintToOutput("Creating Menu");
             try
             {
-                float centerW = mainScreen.Width / 2f;
+                float centerW = mainScreen.Width/2f;
                 ButtonControl playGameControl = new ButtonControl();
-                playGameControl.Bounds = new UniRectangle(mainScreen.Width / 2 - 50, 10, 100, 32
-               );
+                playGameControl.Bounds = new UniRectangle(mainScreen.Width/2 - 50, 10, 100, 32
+                    );
                 playGameControl.Text = "Play Game";
-                playGameControl.Pressed += delegate(object sender, EventArgs args)
-                {
-                    playClickEvent(sender, args);
-                };
+                playGameControl.Pressed += delegate(object sender, EventArgs args) { playClickEvent(sender, args); };
                 mainScreen.Desktop.Children.Add(playGameControl);
 
                 ButtonControl settingsControl = new ButtonControl();
                 settingsControl.Bounds = new UniRectangle(centerW - 50,
                     playGameControl.Bounds.Location.Y + playGameControl.Bounds.Size.Y + 10, 100, 32);
                 settingsControl.Text = "Settings";
-                settingsControl.Pressed += delegate(object sender, EventArgs args)
-                {
-                    settingsClickEvent(sender, args);
-                };
+                settingsControl.Pressed += delegate(object sender, EventArgs args) { settingsClickEvent(sender, args); };
                 mainScreen.Desktop.Children.Add(settingsControl);
 
                 ButtonControl quitButton = new ButtonControl();
                 quitButton.Text = "Quit";
                 quitButton.Bounds = new UniRectangle(centerW - 50,
                     settingsControl.Bounds.Location.Y + settingsControl.Bounds.Size.Y + 10, 100, 32
-                );
+                    );
                 quitButton.Pressed += delegate(object sender, EventArgs arguments)
                 {
                     PrintToOutput("Exit_Button Clicked");
                     Exit();
                 };
                 mainScreen.Desktop.Children.Add(quitButton);
-
             }
             catch (Exception e)
             {
                 handler.Invoke(e, new UnhandledExceptionEventArgs(e, true));
             }
             PrintToOutput("Finished Creating Menu");
+
             #region Reference
 
             //             // Button to open another "New Game" dialog
@@ -274,6 +273,7 @@ namespace TrafficWarden.source
             outWriter.WriteLine();
             Exit();
         }
+
         private Boolean printToLog(Exception e, UnhandledExceptionEventArgs args)
         {
             string error = "ErrorLog" + DateTime.Now.ToFileTime() + ".txt";
@@ -282,10 +282,12 @@ namespace TrafficWarden.source
             tw.WriteLine(e);
             tw.WriteLine("Is Terminating: " + args.IsTerminating);
             tw.WriteLine();
-            tw.WriteLine("Please email a copy of this errorlog and the Outputlog to Bomberdes@live.com, along with a description of what you were doing at the time, and the developer will get right on to fixing the problem");
+            tw.WriteLine(
+                "Please email a copy of this errorlog and the Outputlog to Bomberdes@live.com, along with a description of what you were doing at the time, and the developer will get right on to fixing the problem");
             tw.Close();
             return true;
         }
+
         #endregion
 
         #region Output Handling
@@ -294,6 +296,7 @@ namespace TrafficWarden.source
         {
             outWriter.WriteLine(DateTime.Now.ToLongTimeString() + " " + output);
         }
+
         #endregion
     }
 }

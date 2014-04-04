@@ -13,13 +13,14 @@ using TrafficWarden.source;
 
 namespace TrafficWarden.source.Screens
 {
-    class SplashScreen : GameScreen
+    internal class SplashScreen : GameScreen
     {
         public SplashScreen()
         {
             Console.WriteLine("testing");
             OutputLogging.writeOutput("Starting Splashscreen");
         }
+
         public override void LoadContent()
         {
             base.LoadContent();
@@ -28,7 +29,7 @@ namespace TrafficWarden.source.Screens
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice graphics = ScreenManager.GraphicsDevice;
-            
+
 
             graphics.Clear(Color.Goldenrod);
             base.Draw(gameTime);

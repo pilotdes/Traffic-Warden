@@ -30,7 +30,6 @@ namespace TrafficWarden.source.Screen_Manager
 
         #region Initialization
 
-
         /// <summary>
         /// Constructs a new input state.
         /// </summary>
@@ -45,11 +44,9 @@ namespace TrafficWarden.source.Screen_Manager
             GamePadWasConnected = new bool[MaxInputs];
         }
 
-
         #endregion
 
         #region Public Methods
-
 
         /// <summary>
         /// Reads the latest state of the keyboard and gamepad.
@@ -61,8 +58,8 @@ namespace TrafficWarden.source.Screen_Manager
                 LastKeyboardStates[i] = CurrentKeyboardStates[i];
                 LastGamePadStates[i] = CurrentGamePadStates[i];
 
-                CurrentKeyboardStates[i] = Keyboard.GetState((PlayerIndex)i);
-                CurrentGamePadStates[i] = GamePad.GetState((PlayerIndex)i);
+                CurrentKeyboardStates[i] = Keyboard.GetState((PlayerIndex) i);
+                CurrentGamePadStates[i] = GamePad.GetState((PlayerIndex) i);
 
                 // Keep track of whether a gamepad has ever been
                 // connected, so we can detect if it is unplugged.
@@ -89,14 +86,14 @@ namespace TrafficWarden.source.Screen_Manager
         /// is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsNewKeyPress(Keys key, PlayerIndex? controllingPlayer,
-                                            out PlayerIndex playerIndex)
+            out PlayerIndex playerIndex)
         {
             if (controllingPlayer.HasValue)
             {
                 // Read input from the specified player.
                 playerIndex = controllingPlayer.Value;
 
-                int i = (int)playerIndex;
+                int i = (int) playerIndex;
 
                 return (CurrentKeyboardStates[i].IsKeyDown(key) &&
                         LastKeyboardStates[i].IsKeyUp(key));
@@ -119,14 +116,14 @@ namespace TrafficWarden.source.Screen_Manager
         /// is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsNewButtonPress(Buttons button, PlayerIndex? controllingPlayer,
-                                                     out PlayerIndex playerIndex)
+            out PlayerIndex playerIndex)
         {
             if (controllingPlayer.HasValue)
             {
                 // Read input from the specified player.
                 playerIndex = controllingPlayer.Value;
 
-                int i = (int)playerIndex;
+                int i = (int) playerIndex;
 
                 return (CurrentGamePadStates[i].IsButtonDown(button) &&
                         LastGamePadStates[i].IsButtonUp(button));
@@ -149,7 +146,7 @@ namespace TrafficWarden.source.Screen_Manager
         /// is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsMenuSelect(PlayerIndex? controllingPlayer,
-                                 out PlayerIndex playerIndex)
+            out PlayerIndex playerIndex)
         {
             return IsNewKeyPress(Keys.Space, controllingPlayer, out playerIndex) ||
                    IsNewKeyPress(Keys.Enter, controllingPlayer, out playerIndex) ||
@@ -165,7 +162,7 @@ namespace TrafficWarden.source.Screen_Manager
         /// is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsMenuCancel(PlayerIndex? controllingPlayer,
-                                 out PlayerIndex playerIndex)
+            out PlayerIndex playerIndex)
         {
             return IsNewKeyPress(Keys.Escape, controllingPlayer, out playerIndex) ||
                    IsNewButtonPress(Buttons.B, controllingPlayer, out playerIndex) ||
@@ -216,7 +213,6 @@ namespace TrafficWarden.source.Screen_Manager
                    IsNewButtonPress(Buttons.Back, controllingPlayer, out playerIndex) ||
                    IsNewButtonPress(Buttons.Start, controllingPlayer, out playerIndex);
         }
-
 
         #endregion
     }

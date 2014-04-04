@@ -14,23 +14,22 @@ namespace TrafficWarden.source.Screen_Manager
     {
         #region Fields
 
-        List<GameScreen> screens = new List<GameScreen>();
-        List<GameScreen> screensToUpdate = new List<GameScreen>();
+        private List<GameScreen> screens = new List<GameScreen>();
+        private List<GameScreen> screensToUpdate = new List<GameScreen>();
 
-        InputState input = new InputState();
+        private InputState input = new InputState();
 
-        SpriteBatch spriteBatch;
-        SpriteFont font;
-        Texture2D blankTexture;
+        private SpriteBatch spriteBatch;
+        private SpriteFont font;
+        private Texture2D blankTexture;
 
-        bool isInitialized;
+        private bool isInitialized;
 
-        bool traceEnabled;
+        private bool traceEnabled;
 
         #endregion
 
         #region Properties
-
 
         /// <summary>
         /// A default SpriteBatch shared by all the screens. This saves
@@ -63,11 +62,9 @@ namespace TrafficWarden.source.Screen_Manager
             set { traceEnabled = value; }
         }
 
-
         #endregion
 
         #region Initialization
-
 
         /// <summary>
         /// Constructs a new screen manager component.
@@ -126,11 +123,9 @@ namespace TrafficWarden.source.Screen_Manager
             }
         }
 
-
         #endregion
 
         #region Update and Draw
-
 
         /// <summary>
         /// Allows each screen to run logic.
@@ -189,7 +184,7 @@ namespace TrafficWarden.source.Screen_Manager
         /// <summary>
         /// Prints a list of all the screens, for debugging.
         /// </summary>
-        void TraceScreens()
+        private void TraceScreens()
         {
             List<string> screenNames = new List<string>();
 
@@ -214,11 +209,9 @@ namespace TrafficWarden.source.Screen_Manager
             }
         }
 
-
         #endregion
 
         #region Public Methods
-
 
         /// <summary>
         /// Adds a new screen to the screen manager.
@@ -290,12 +283,11 @@ namespace TrafficWarden.source.Screen_Manager
             spriteBatch.Begin();
 
             spriteBatch.Draw(blankTexture,
-                             new Rectangle(0, 0, viewport.Width, viewport.Height),
-                             Color.Black * alpha);
+                new Rectangle(0, 0, viewport.Width, viewport.Height),
+                Color.Black*alpha);
 
             spriteBatch.End();
         }
-
 
         #endregion
     }

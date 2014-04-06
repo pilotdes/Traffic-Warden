@@ -19,6 +19,51 @@
       <Output>C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\TrafLite.xnb</Output>
       <Time>2014-03-20T09:34:23.6144067+13:00</Time>
     </Item>
+    <Item>
+      <Source>roadparts\pavement.png</Source>
+      <Name>roadparts\pavement</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\pavement.xnb</Output>
+      <Time>2014-04-04T20:42:43.2165293+13:00</Time>
+    </Item>
+    <Item>
+      <Source>roadparts\road.png</Source>
+      <Name>roadparts\road</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\road.xnb</Output>
+      <Time>2014-04-04T20:42:43.2115286+13:00</Time>
+    </Item>
+    <Item>
+      <Source>roadparts\Bases\intersection.png</Source>
+      <Name>roadparts\Bases\intersection</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\Bases\intersection.xnb</Output>
+      <Time>2014-04-04T20:42:43.2135295+13:00</Time>
+    </Item>
+    <Item>
+      <Source>ArrowH.png</Source>
+      <Name>ArrowH</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\ArrowH.xnb</Output>
+      <Time>2014-04-07T10:28:33.1082827+12:00</Time>
+    </Item>
+    <Item>
+      <Source>ArrowV.png</Source>
+      <Name>ArrowV</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\ArrowV.xnb</Output>
+      <Time>2014-04-07T10:41:26.5272706+12:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{EBBD38D6-825C-4789-8255-B775FA53C993}</ContentProjectGUID>

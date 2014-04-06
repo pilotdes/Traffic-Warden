@@ -21,6 +21,7 @@ namespace TrafficWarden.source.Screens
         private TrafficFlowSystem AIflow;
         private TrafficLightSystem AISystem;
         private IntersectionInstance intersection;
+        private IntersectionInstance intersection2;
         private MouseState mouseState;
         private KeyboardState keyboardState;
 
@@ -30,12 +31,17 @@ namespace TrafficWarden.source.Screens
             AIflow = new TrafficFlowSystem(Difficulty);
             AISystem = new TrafficLightSystem(Difficulty);
             intersection=new IntersectionInstance(150,150,IntersectionType.Crossroads, IntersectionSurface.Ashphalt, 
-            LightState.Green, true, "TEST", 2);
+            LightState.Green, true, "TEST", 2,true, TrafficFlowDirection.Horizontal);
+            intersection2=new IntersectionInstance(250,250,IntersectionType.Crossroads, IntersectionSurface.Tarmac,
+                LightState.Red, true, "Test2", 2, false, TrafficFlowDirection.Horizontal);
         }
 
         public override void LoadContent()
         {
             ContentManager Content = ScreenManager.Game.Content;
+            Content.RootDirectory = "Content";
+            intersection.LoadContent(Content);
+            intersection2.LoadContent(Content);
             test = Content.Load<Texture2D>("TrafLite");
             base.LoadContent();
         }
@@ -48,10 +54,8 @@ namespace TrafficWarden.source.Screens
         public override void HandleInput(InputState input)
         {
             mouseState = Mouse.GetState();
-            if (intersection.CheckMouseInteraction(mouseState))
-            {
-                Console.WriteLine("clicked");
-            }
+            intersection.CheckMouseInteraction(mouseState);
+            intersection2.CheckMouseInteraction(mouseState);
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
@@ -66,7 +70,8 @@ namespace TrafficWarden.source.Screens
             GraphicsDevice GD = ScreenManager.GraphicsDevice;
             SpriteBatch SB = ScreenManager.SpriteBatch;
 
-            intersection.draw(SB, test);
+            intersection.draw(SB);
+            intersection2.draw(SB);
 
             base.Draw(gameTime);
         }

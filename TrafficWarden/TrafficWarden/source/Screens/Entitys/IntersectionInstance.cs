@@ -43,6 +43,12 @@ namespace TrafficWarden.source.Screens.Entitys
         Steel,
     }
 
+    public enum TrafficFlowDirection
+    {
+        Horizontal,
+        Vertical,
+    }
+
     #endregion
 
     /// <summary>
@@ -53,13 +59,27 @@ namespace TrafficWarden.source.Screens.Entitys
     {
         #region Fields
 
+        #region Non-Getters-and-Setters
+
         private MouseState oldState;
+        private Texture2D Base;
+        private Texture2D Sidewalk;
+        private Texture2D Surface;
+        private Texture2D DirectionArrowH;
+        private Texture2D DirectionArrowV;
+
+        private const int tilesize = 64;
+
+        private Boolean MouseOver;
+
+        #endregion
 
         #region Event Handlers
 
-        public EventHandler<EventArgs> OnClicked;
-        public EventHandler<EventArgs> OnMouseOver;
-        public EventHandler<EventArgs> OnLightStateChanged;
+        //public EventHandler<EventArgs> OnClicked;
+        //public EventHandler<MouseOver> OnMouseOver;
+        //public EventHandler<EventArgs> OnLightStateChanged;
+
         #endregion
 
         #region Interface Getters and Setters
@@ -68,80 +88,122 @@ namespace TrafficWarden.source.Screens.Entitys
 
         #region Custom Getters and Setters
 
+        #region Background Fields
+
+        private string id;
+        private IntersectionType type;
+        private int numlane;
+        private Boolean controlled;
+        private IntersectionSurface Isurface;
+        private LightState state;
+        private TrafficFlowDirection d;
+
+
+        #endregion
+
         /// <summary>
         /// The Unique identifier for the intersection instance
         /// </summary>
-        public string IntersectionIdentifier;
+        public string IntersectionIdentifier
+        {
+            //this complicated getter and setter gets around an error where
+            //the getter would just keep calling itself and causing a stackoverflow exception
+            get
+            {
+                if (id == null)
+                {
+                    return "";
+                }
+                return id;
+            }
+            set { id = value; }
+        }
 
-        //{
-        //    get { return IntersectionIdentifier; }
-        //    set { IntersectionIdentifier = value; }
-        //}
 
         /// <summary>
         /// Sets the intersection type
         /// </summary>
-        public IntersectionType IntersectionType;
+        public IntersectionType IntersectionType
+        {
+            get
+            {
+                if (type == null)
+                {
+                    return IntersectionType.Crossroads;
+                }
+                return type;
+            }
+            set { type = value; }
+        }
 
-        //{
-        //    get { return IntersectionType; }
-        //    set { IntersectionType = value; }
-        //}
 
         /// <summary>
         /// Sets how many lanes the intersection
         /// has running through it
         /// </summary>
-        public int NumberOfLanes;
+        public int NumberOfLanes
+        {
+            get
+            {
+                if (numlane == null)
+                {
+                    return 0;
+                }
+                return numlane;
+            }
+            set { numlane = value; }
+        }
 
-        //{
-        //    get { return (NumberOfLanes); }
-        //    set { NumberOfLanes = value; }
-        //}
 
         /// <summary>
         /// Sets whether or not the intersection is controlled by
         /// lights, and if it isn't, will then bypass all the players
         /// input
         /// </summary>
-        public Boolean IsControlled;
+        public Boolean IsControlled
+        {
+            get
+            {
+                if (controlled == null)
+                {
+                    return false;
+                }
+                return controlled;
+            }
+            set { controlled = value; }
+        }
 
-        //{
-        //    get { return (IsControlled); }
-        //    set { IsControlled = value; }
-        //}
 
         /// <summary>
         /// Sets the Intersection Surface
         /// </summary>
-        public IntersectionSurface IntersectionSurface;
-
-        //{
-        //    /// <summary>
-        //    /// this has a range of values, which are:
-        //    /// dirt, gravel, concrete, ashphalt, grass and mud
-        //    /// </summary>
-        //    get { return (IntersectionSurface); }
-        //    set { IntersectionSurface = value; }
-        //}
+        public IntersectionSurface IntersectionSurface
+        {
+            get
+            {
+                if (Isurface == null)
+                {
+                    return IntersectionSurface.Steel;
+                }
+                return Isurface;
+            }
+            set { Isurface = value; }
+        }
 
         /// <summary>
         /// Sets the current State of the lights
         /// </summary>
-        public LightState CurrentLightState;
-
-        //{
-        //    get { return (CurrentLightState); }
-        //    set { CurrentLightState = value; }
-        //}
-
-        /// <summary>
-        /// Sets the sprite to use as the intersection
-        /// </summary>
-        public Texture2D IntersectionSprite
+        public LightState CurrentLightState
         {
-            get { return (IntersectionSprite); }
-            set { IntersectionSprite = value; }
+            get
+            {
+                if (state == null)
+                {
+                    return LightState.Off;
+                }
+                return state;
+            }
+            set { state = value; }
         }
 
         /// <summary>
@@ -149,34 +211,38 @@ namespace TrafficWarden.source.Screens.Entitys
         /// </summary>
         public int PositionX;
 
-        //{
-        //    get { return (PositionX); }
-        //    set { PositionX = value; }
-        //}
-
         /// <summary>
         /// Sets the position of the intersection along the Y axis
         /// </summary>
         public int PositionY;
 
-        //{
-        //    get { return (PositionY); }
-        //    set { PositionY = value; }
-        //}
+        public TrafficFlowDirection Direction
+        {
+            get
+            {
+                if (d == null)
+                {
+                    return TrafficFlowDirection.Horizontal;
+                }
+                return d;
+            }
+            set { d = value; }
+        }
+
+        public Boolean HasSideWalk;
 
         #endregion
-
-        #endregion
-
-        #region Event Handlers
 
         #endregion
 
         #region Initialization
 
         public IntersectionInstance(int X, int Y, IntersectionType type, IntersectionSurface surface,
-            LightState initialLightState, Boolean isControlledL, string ID, int numLanes)
+            LightState initialLightState, Boolean isControlledL, string ID, int numLanes, Boolean haspavement, TrafficFlowDirection direction)
         {
+            OutputLogging.writeOutput("Starting new Intersection Instance. ID = " + ID);
+            OutputLogging.writeOutput(ID + " position(x,y): (" + X + ", " + Y + ")");
+
             #region Setters
 
             PositionX = X;
@@ -187,13 +253,18 @@ namespace TrafficWarden.source.Screens.Entitys
             IsControlled = isControlledL;
             IntersectionIdentifier = ID;
             NumberOfLanes = numLanes;
+            HasSideWalk = haspavement;
+            Direction = direction;
+
 
             #endregion
 
             #region Events
-            OnClicked+=OnIntersectionClicked;
-            OnMouseOver+=OnIntersectionMouseOver;
-            OnLightStateChanged += OnOnLightStateChanged;
+
+            //OnClicked += OnIntersectionClicked;
+            //OnMouseOver += OnIntersectionMouseOver;
+            //OnLightStateChanged += OnOnLightStateChanged;
+
             #endregion
 
             EntityDict.AddEnity(this);
@@ -202,6 +273,24 @@ namespace TrafficWarden.source.Screens.Entitys
         #endregion
 
         #region Methods
+
+        #region Content
+
+        public void LoadContent(ContentManager content)
+        {
+            string fold = "roadparts/";
+
+            Base = content.Load<Texture2D>(fold + "Bases/intersection");
+            if (HasSideWalk)
+            {
+                Sidewalk = content.Load<Texture2D>(fold + "pavement");
+            }
+            Surface = content.Load<Texture2D>(fold + "road");
+            DirectionArrowH = content.Load<Texture2D>("ArrowH");
+            DirectionArrowV = content.Load<Texture2D>("ArrowV");
+        }
+
+        #endregion
 
         #region Decision Methods
 
@@ -217,21 +306,37 @@ namespace TrafficWarden.source.Screens.Entitys
         public Boolean CheckMouseInteraction(MouseState state)
         {
             Boolean val = false;
-            if ((state.X > PositionX && state.X < PositionX + 50)
-                && state.Y > PositionY && state.Y < PositionY + 50)
+            if ((state.X > PositionX && state.X < PositionX + tilesize)
+                && state.Y > PositionY && state.Y < PositionY + tilesize)
             {
+                MouseOver = true;
                 if (state.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
                 {
                     //TODO add code to extend functionality
-                    val =true;
+                    val = true;
+                    Console.WriteLine(IntersectionIdentifier+" Clicked");
+                    ToggleDirection();
+                    OutputLogging.writeOutput(IntersectionIdentifier + " Clicked");
                 }
             }
             else
             {
-                val= false;
+                val = false;
+                MouseOver = false;
             }
             oldState = state;
             return val;
+        }
+
+        private void ToggleDirection()
+        {
+            if (Direction == TrafficFlowDirection.Horizontal)
+            {
+                Direction = TrafficFlowDirection.Vertical;
+            }else if (Direction==TrafficFlowDirection.Vertical)
+            {
+                Direction = TrafficFlowDirection.Horizontal;
+            }
         }
 
         #endregion
@@ -243,34 +348,36 @@ namespace TrafficWarden.source.Screens.Entitys
         /// </summary>
         /// <param name="Spritebatch"></param>
         /// <param name="Sprite"></param>
-        public void draw(SpriteBatch Spritebatch, Texture2D Sprite)
+        public void draw(SpriteBatch Spritebatch)
         {
             Spritebatch.Begin();
-            Spritebatch.Draw(Sprite, new Rectangle(this.PositionX,this.PositionY,50,50),Color.White );
+            Spritebatch.Draw(Base, new Rectangle(this.PositionX, this.PositionY, tilesize, tilesize), Color.White);
+            if (HasSideWalk)
+            {
+                Spritebatch.Draw(Sidewalk, new Rectangle(this.PositionX, this.PositionY, tilesize, tilesize),
+                    Color.White);
+            }
+            Spritebatch.Draw(Surface, new Rectangle(this.PositionX, this.PositionY, tilesize, tilesize), Color.White);
+            if (MouseOver)
+            {
+                if (Direction == TrafficFlowDirection.Horizontal)
+                {
+                    Spritebatch.Draw(DirectionArrowH, new Rectangle(PositionX, PositionY, tilesize, tilesize),
+                        Color.White);
+                }
+                else
+                {
+                    Spritebatch.Draw(DirectionArrowV, new Rectangle(PositionX, PositionY, tilesize,tilesize),
+                        Color.White);
+                }
+                //TODO add code that displays a large set of arrows and crosses to determine what way the traffic is flowing
+            }
             Spritebatch.End();
         }
 
-        #endregion
-
-        #region EventHandler Methods
-
-        private void OnOnLightStateChanged(object sender, EventArgs eventArgs)
+        public void update(GameTime time)
         {
-            //TODO change the CurrentLightState field to the light state
-            //TODO add a timing thread to set when the lights change from yellow to red
-            //in a 50kph zone, the lights should take 4 seconds to change from yellow to red
-            throw new NotImplementedException();
-        }
-
-
-        private void OnIntersectionMouseOver(object sender, EventArgs eventArgs)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnIntersectionClicked(object sender, EventArgs eventArgs)
-        {
-            throw new NotImplementedException();
+            
         }
 
         #endregion

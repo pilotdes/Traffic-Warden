@@ -42,17 +42,26 @@ namespace TrafficWarden.source
         {
                 ThreadStart childref = new ThreadStart(delegate
                 {
-                    //Thread.BeginCriticalRegion();
-                    using (var file = new StreamWriter("Output.txt", true))
+                    try
                     {
-                        try
+                        //Thread.BeginCriticalRegion();
+                        using (var file = new StreamWriter("Output.txt", true))
                         {
-                            file.WriteLine(DateTime.Now.ToLongTimeString() + " -- " + output);
+                            try
+                            {
+                                file.WriteLine(DateTime.Now.ToLongTimeString() + " -- " + output);
+                            }
+                            catch (Exception evt)
+                            {
+                                Console.WriteLine(evt);
+                                return;
+                            }
                         }
-                        catch(IOException evt)
-                        {
-                            Console.WriteLine(evt);
-                        }
+                    }
+                    catch (Exception evt)
+                    {
+                        Console.WriteLine(evt);
+                        return;
                     }
                     //Thread.EndCriticalRegion();
                 });

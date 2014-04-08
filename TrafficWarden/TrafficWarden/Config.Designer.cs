@@ -58,5 +58,14 @@ namespace TrafficWarden {
                 this["isFullScreen"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("64")]
+        public int TileSize {
+            get {
+                return ((int)(this["TileSize"]));
+            }
+        }
     }
 }

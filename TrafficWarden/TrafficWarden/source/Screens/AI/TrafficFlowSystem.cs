@@ -5,9 +5,44 @@ using System.Text;
 
 namespace TrafficWarden.source.Screens.AI
 {
+    #region Enumerations
+
+    enum TrafficDirection
+    {
+        Horizontal,
+        Vertical,
+    }
+
+    #endregion
+
     internal class TrafficFlowSystem
     {
+        #region Fields
+
+        #region Constants
+
+        /// <summary>
+        /// The Chances of a Semi being generated
+        /// </summary>
+        private const float ChanceOfTruck = 0.2f;
+
+        #endregion
+
+        #region Non Getters and Setters
         private Enum Difficulty;
+        #endregion
+
+        #region Background Fields
+
+        #endregion
+
+        #region Getters and Setters
+
+        #endregion
+
+        #endregion
+
+        #region Initialization
 
         public TrafficFlowSystem(Enum Difficulty)
         {
@@ -15,8 +50,11 @@ namespace TrafficWarden.source.Screens.AI
             this.Difficulty = Difficulty;
         }
 
+        #endregion
+
         public void Update()
         {
+
         }
     }
 }

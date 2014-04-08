@@ -17,6 +17,9 @@ namespace TrafficWarden.source.Screens
 {
     internal class ProtoGameScreen : GameScreen
     {
+
+        #region fields
+        #region fields
         private Texture2D test;
         private TrafficFlowSystem AIflow;
         private TrafficLightSystem AISystem;
@@ -24,6 +27,30 @@ namespace TrafficWarden.source.Screens
         private IntersectionInstance intersection2;
         private MouseState mouseState;
         private KeyboardState keyboardState;
+        private Boolean firsttime = true;
+        #endregion
+        #region Background Fields
+
+        private ContentManager man;
+        #endregion
+        #region Getters and Setters
+
+        public ContentManager Content
+        {
+            get
+            {
+                if (man == null)
+                {
+                    throw new ArgumentNullException();
+                }
+                return man;
+            }
+            set { man = value; }
+        }
+
+
+        #endregion
+        #endregion
 
         public ProtoGameScreen(Enum Difficulty, Game game)
         {
@@ -38,11 +65,10 @@ namespace TrafficWarden.source.Screens
 
         public override void LoadContent()
         {
-            ContentManager Content = ScreenManager.Game.Content;
+            Content = ScreenManager.Game.Content;
             Content.RootDirectory = "Content";
             intersection.LoadContent(Content);
             intersection2.LoadContent(Content);
-            test = Content.Load<Texture2D>("TrafLite");
             base.LoadContent();
         }
 
@@ -69,7 +95,6 @@ namespace TrafficWarden.source.Screens
         {
             GraphicsDevice GD = ScreenManager.GraphicsDevice;
             SpriteBatch SB = ScreenManager.SpriteBatch;
-
             intersection.draw(SB);
             intersection2.draw(SB);
 

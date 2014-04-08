@@ -28,3 +28,6 @@ C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWa
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\Bases\intersection.xnb
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\ArrowH.xnb
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\ArrowV.xnb
+C:\Users\BomberDes\Documents\Visual Studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\xTile.dll
+C:\Users\BomberDes\Documents\Visual Studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\test.xnb
+C:\Users\BomberDes\Documents\Visual Studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\spritesheet.xnb

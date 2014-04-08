@@ -68,7 +68,7 @@ namespace TrafficWarden.source.Screens.Entitys
         private Texture2D DirectionArrowH;
         private Texture2D DirectionArrowV;
 
-        private const int tilesize = 64;
+        public const int tilesize = 64;
 
         private Boolean MouseOver;
 

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficWarden", "TrafficWar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficWardenContent", "TrafficWarden\TrafficWardenContent\TrafficWardenContent.contentproj", "{EBBD38D6-825C-4789-8255-B775FA53C993}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xtile", "Xtile", "{1274DF36-3739-47D4-98B4-BE5517C394EB}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\xTile207\xTile207\Engine\PC\xTile.dll = ..\..\..\..\Downloads\xTile207\xTile207\Engine\PC\xTile.dll
+		..\..\..\..\Downloads\xTile207\xTile207\Pipeline\xTile.Pipeline.dll = ..\..\..\..\Downloads\xTile207\xTile207\Pipeline\xTile.Pipeline.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -27,9 +27,17 @@ namespace TrafficWarden.source.Screen_Manager
 
         private bool traceEnabled;
 
+        private Game game;
+
         #endregion
 
         #region Properties
+
+        public Game GameVar
+        {
+            get { return game; }
+            set { game = value; }
+        }
 
         /// <summary>
         /// A default SpriteBatch shared by all the screens. This saves
@@ -72,6 +80,7 @@ namespace TrafficWarden.source.Screen_Manager
         public ScreenManager(Game game)
             : base(game)
         {
+            this.GameVar = game;
             OutputLogging.writeOutput("Initializing ScreenManager Class");
             // we must set EnabledGestures before we can query for them, but
             // we don't assume the game wants to read them.

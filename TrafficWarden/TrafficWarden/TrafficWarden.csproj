@@ -102,6 +102,12 @@
     <Reference Include="XNInterfaceImporters">
       <HintPath>..\..\packages\XNInterfaceContentPipeline.0.3.2\lib\net40\XNInterfaceImporters.dll</HintPath>
     </Reference>
+    <Reference Include="xTile">
+      <HintPath>..\..\..\..\..\..\Downloads\xTile207\xTile207\Engine\PC\xTile.dll</HintPath>
+    </Reference>
+    <Reference Include="xTile.Pipeline">
+      <HintPath>..\..\..\..\..\..\Downloads\xTile207\xTile207\Pipeline\xTile.Pipeline.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.Designer.cs">

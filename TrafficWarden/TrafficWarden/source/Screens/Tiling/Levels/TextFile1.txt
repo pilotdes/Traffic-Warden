@@ -1,0 +1,44 @@
+﻿Tile Template:
+
+Operators(Directions):
+LEF - Left
+RIG - Right
+HOR - Horizontal
+VER - Vertical
+
+Operators(Intersections):
+CRO - Crossroads
+TEE - Tee Intersection
+
+Operators(Other):
+NUL - Not Applicable
+TRU - True
+FAL - False
+--- - Next Tile
+
+Tiles:
+PLA - Plain
+INT - Intersection
+STR - Straight
+COR - Corner
+
+Surfaces:
+TAR - Tarmac
+DIR - Dirt
+ASH - Asphalt
+GRA - Grass
+
+Properties:
+CON - Controlled
+FLO - Default Traffic Flow
+PAV - Pavement
+IID - Individual ID
+
+Structure:
+	Intersection: Intersection, Type, Surface, Default Traffic Flow, 
+				  Pavement and boolean operator, controlled and boolean operator, IID and 3 letter ID
+	Example: INTCROTARVERPAVTRUCONTRUIIDCI1 (Crossroads tarmac intersection with a vertical traffic flow,
+	 with pavement and is controlled, has an id of CI1)
+
+	Plain(PLA): tile, surface
+		Example: PLADIR (Plain Dirt Tile)

@@ -64,6 +64,7 @@
       <HintPath>..\..\packages\Artemis.1.3.1\lib\net40-client\artemis.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
@@ -93,15 +94,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Net" />
-    <Reference Include="XNInterface">
-      <HintPath>..\..\packages\XNInterfaceContentPipeline.0.3.2\lib\net40\XNInterface.dll</HintPath>
-    </Reference>
-    <Reference Include="XNInterfaceCompilerLib">
-      <HintPath>..\..\packages\XNInterfaceContentPipeline.0.3.2\lib\net40\XNInterfaceCompilerLib.dll</HintPath>
-    </Reference>
-    <Reference Include="XNInterfaceImporters">
-      <HintPath>..\..\packages\XNInterfaceContentPipeline.0.3.2\lib\net40\XNInterfaceImporters.dll</HintPath>
-    </Reference>
     <Reference Include="xTile">
       <HintPath>..\..\..\..\..\..\Downloads\xTile207\xTile207\Engine\PC\xTile.dll</HintPath>
     </Reference>
@@ -129,12 +121,14 @@
     <Compile Include="source\Screens\ProtoGameScreen.cs" />
     <Compile Include="source\Screens\SplashScreen.cs" />
     <Compile Include="source\Screens\AI\TrafficLightSystem.cs" />
+    <Compile Include="source\Screens\Tiling\MapReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <Content Include="source\Screens\Tiling\Levels\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TrafficWardenContent\TrafficWardenContent.contentproj">

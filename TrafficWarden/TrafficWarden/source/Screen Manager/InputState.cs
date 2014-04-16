@@ -31,7 +31,7 @@ namespace TrafficWarden.source.Screen_Manager
         #region Initialization
 
         /// <summary>
-        /// Constructs a new input state.
+        ///     Constructs a new input state.
         /// </summary>
         public InputState()
         {
@@ -49,7 +49,7 @@ namespace TrafficWarden.source.Screen_Manager
         #region Public Methods
 
         /// <summary>
-        /// Reads the latest state of the keyboard and gamepad.
+        ///     Reads the latest state of the keyboard and gamepad.
         /// </summary>
         public void Update()
         {
@@ -80,10 +80,10 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Helper for checking if a key was newly pressed during this update. The
-        /// controllingPlayer parameter specifies which player to read input for.
-        /// If this is null, it will accept input from any player. When a keypress
-        /// is detected, the output playerIndex reports which player pressed it.
+        ///     Helper for checking if a key was newly pressed during this update. The
+        ///     controllingPlayer parameter specifies which player to read input for.
+        ///     If this is null, it will accept input from any player. When a keypress
+        ///     is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsNewKeyPress(Keys key, PlayerIndex? controllingPlayer,
             out PlayerIndex playerIndex)
@@ -110,10 +110,10 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Helper for checking if a button was newly pressed during this update.
-        /// The controllingPlayer parameter specifies which player to read input for.
-        /// If this is null, it will accept input from any player. When a button press
-        /// is detected, the output playerIndex reports which player pressed it.
+        ///     Helper for checking if a button was newly pressed during this update.
+        ///     The controllingPlayer parameter specifies which player to read input for.
+        ///     If this is null, it will accept input from any player. When a button press
+        ///     is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsNewButtonPress(Buttons button, PlayerIndex? controllingPlayer,
             out PlayerIndex playerIndex)
@@ -140,10 +140,10 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Checks for a "menu select" input action.
-        /// The controllingPlayer parameter specifies which player to read input for.
-        /// If this is null, it will accept input from any player. When the action
-        /// is detected, the output playerIndex reports which player pressed it.
+        ///     Checks for a "menu select" input action.
+        ///     The controllingPlayer parameter specifies which player to read input for.
+        ///     If this is null, it will accept input from any player. When the action
+        ///     is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsMenuSelect(PlayerIndex? controllingPlayer,
             out PlayerIndex playerIndex)
@@ -156,10 +156,10 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Checks for a "menu cancel" input action.
-        /// The controllingPlayer parameter specifies which player to read input for.
-        /// If this is null, it will accept input from any player. When the action
-        /// is detected, the output playerIndex reports which player pressed it.
+        ///     Checks for a "menu cancel" input action.
+        ///     The controllingPlayer parameter specifies which player to read input for.
+        ///     If this is null, it will accept input from any player. When the action
+        ///     is detected, the output playerIndex reports which player pressed it.
         /// </summary>
         public bool IsMenuCancel(PlayerIndex? controllingPlayer,
             out PlayerIndex playerIndex)
@@ -171,9 +171,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Checks for a "menu up" input action.
-        /// The controllingPlayer parameter specifies which player to read
-        /// input for. If this is null, it will accept input from any player.
+        ///     Checks for a "menu up" input action.
+        ///     The controllingPlayer parameter specifies which player to read
+        ///     input for. If this is null, it will accept input from any player.
         /// </summary>
         public bool IsMenuUp(PlayerIndex? controllingPlayer)
         {
@@ -186,9 +186,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Checks for a "menu down" input action.
-        /// The controllingPlayer parameter specifies which player to read
-        /// input for. If this is null, it will accept input from any player.
+        ///     Checks for a "menu down" input action.
+        ///     The controllingPlayer parameter specifies which player to read
+        ///     input for. If this is null, it will accept input from any player.
         /// </summary>
         public bool IsMenuDown(PlayerIndex? controllingPlayer)
         {
@@ -201,9 +201,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Checks for a "pause the game" input action.
-        /// The controllingPlayer parameter specifies which player to read
-        /// input for. If this is null, it will accept input from any player.
+        ///     Checks for a "pause the game" input action.
+        ///     The controllingPlayer parameter specifies which player to read
+        ///     input for. If this is null, it will accept input from any player.
         /// </summary>
         public bool IsPauseGame(PlayerIndex? controllingPlayer)
         {

@@ -40,8 +40,8 @@ namespace TrafficWarden.source.Screen_Manager
         }
 
         /// <summary>
-        /// A default SpriteBatch shared by all the screens. This saves
-        /// each screen having to bother creating their own local instance.
+        ///     A default SpriteBatch shared by all the screens. This saves
+        ///     each screen having to bother creating their own local instance.
         /// </summary>
         public SpriteBatch SpriteBatch
         {
@@ -50,8 +50,8 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// A default font shared by all the screens. This saves
-        /// each screen having to bother loading their own local copy.
+        ///     A default font shared by all the screens. This saves
+        ///     each screen having to bother loading their own local copy.
         /// </summary>
         public SpriteFont Font
         {
@@ -60,9 +60,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// If true, the manager prints out a list of all the screens
-        /// each time it is updated. This can be useful for making sure
-        /// everything is being added and removed at the right times.
+        ///     If true, the manager prints out a list of all the screens
+        ///     each time it is updated. This can be useful for making sure
+        ///     everything is being added and removed at the right times.
         /// </summary>
         public bool TraceEnabled
         {
@@ -75,7 +75,7 @@ namespace TrafficWarden.source.Screen_Manager
         #region Initialization
 
         /// <summary>
-        /// Constructs a new screen manager component.
+        ///     Constructs a new screen manager component.
         /// </summary>
         public ScreenManager(Game game)
             : base(game)
@@ -90,7 +90,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Initializes the screen manager component.
+        ///     Initializes the screen manager component.
         /// </summary>
         public override void Initialize()
         {
@@ -101,7 +101,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Load your graphics content.
+        ///     Load your graphics content.
         /// </summary>
         protected override void LoadContent()
         {
@@ -121,7 +121,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Unload your graphics content.
+        ///     Unload your graphics content.
         /// </summary>
         protected override void UnloadContent()
         {
@@ -137,7 +137,7 @@ namespace TrafficWarden.source.Screen_Manager
         #region Update and Draw
 
         /// <summary>
-        /// Allows each screen to run logic.
+        ///     Allows each screen to run logic.
         /// </summary>
         public override void Update(GameTime gameTime)
         {
@@ -191,7 +191,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Prints a list of all the screens, for debugging.
+        ///     Prints a list of all the screens, for debugging.
         /// </summary>
         private void TraceScreens()
         {
@@ -205,7 +205,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Tells each screen to draw itself.
+        ///     Tells each screen to draw itself.
         /// </summary>
         public override void Draw(GameTime gameTime)
         {
@@ -223,7 +223,7 @@ namespace TrafficWarden.source.Screen_Manager
         #region Public Methods
 
         /// <summary>
-        /// Adds a new screen to the screen manager.
+        ///     Adds a new screen to the screen manager.
         /// </summary>
         public void AddScreen(GameScreen screen, PlayerIndex? controllingPlayer)
         {
@@ -245,10 +245,10 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Removes a screen from the screen manager. You should normally
-        /// use GameScreen.ExitScreen instead of calling this directly, so
-        /// the screen can gradually transition off rather than just being
-        /// instantly removed.
+        ///     Removes a screen from the screen manager. You should normally
+        ///     use GameScreen.ExitScreen instead of calling this directly, so
+        ///     the screen can gradually transition off rather than just being
+        ///     instantly removed.
         /// </summary>
         public void RemoveScreen(GameScreen screen)
         {
@@ -271,9 +271,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Expose an array holding all the screens. We return a copy rather
-        /// than the real master list, because screens should only ever be added
-        /// or removed using the AddScreen and RemoveScreen methods.
+        ///     Expose an array holding all the screens. We return a copy rather
+        ///     than the real master list, because screens should only ever be added
+        ///     or removed using the AddScreen and RemoveScreen methods.
         /// </summary>
         public GameScreen[] GetScreens()
         {
@@ -282,8 +282,8 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Helper draws a translucent black fullscreen sprite, used for fading
-        /// screens in and out, and for darkening the background behind popups.
+        ///     Helper draws a translucent black fullscreen sprite, used for fading
+        ///     screens in and out, and for darkening the background behind popups.
         /// </summary>
         public void FadeBackBufferToBlack(float alpha)
         {

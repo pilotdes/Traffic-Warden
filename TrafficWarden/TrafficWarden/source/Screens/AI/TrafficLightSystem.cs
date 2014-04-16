@@ -6,8 +6,8 @@ using System.Text;
 namespace TrafficWarden.source.Screens
 {
     /// <summary>
-    /// This Class ties all the TrafficLightControlSystem classes together
-    /// and helps them co-operate and synchronize, where needed
+    ///     This Class ties all the TrafficLightControlSystem classes together
+    ///     and helps them co-operate and synchronize, where needed
     /// </summary>
     internal class TrafficLightSystem
     {

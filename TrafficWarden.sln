@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xtile", "Xtile", "{1274DF36
 		..\..\..\..\Downloads\xTile207\xTile207\Pipeline\xTile.Pipeline.dll = ..\..\..\..\Downloads\xTile207\xTile207\Pipeline\xTile.Pipeline.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,16 @@ Global
 		{EBBD38D6-825C-4789-8255-B775FA53C993}.Release|Any CPU.ActiveCfg = Release|x86
 		{EBBD38D6-825C-4789-8255-B775FA53C993}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{EBBD38D6-825C-4789-8255-B775FA53C993}.Release|x86.ActiveCfg = Release|x86
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3D221F84-DE7F-48AB-9BC0-9096202BA7FF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

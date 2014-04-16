@@ -40,33 +40,33 @@ namespace TrafficWarden.source
 
         public static void writeOutput(string output)
         {
-                ThreadStart childref = new ThreadStart(delegate
+            ThreadStart childref = new ThreadStart(delegate
+            {
+                try
                 {
-                    try
+                    //Thread.BeginCriticalRegion();
+                    using (var file = new StreamWriter("Output.txt", true))
                     {
-                        //Thread.BeginCriticalRegion();
-                        using (var file = new StreamWriter("Output.txt", true))
+                        try
                         {
-                            try
-                            {
-                                file.WriteLine(DateTime.Now.ToLongTimeString() + " -- " + output);
-                            }
-                            catch (Exception evt)
-                            {
-                                Console.WriteLine(evt);
-                                return;
-                            }
+                            file.WriteLine(DateTime.Now.ToLongTimeString() + " -- " + output);
+                        }
+                        catch (Exception evt)
+                        {
+                            Console.WriteLine(evt);
+                            return;
                         }
                     }
-                    catch (Exception evt)
-                    {
-                        Console.WriteLine(evt);
-                        return;
-                    }
-                    //Thread.EndCriticalRegion();
-                });
-                Thread childThread = new Thread(childref);
-                childThread.Start();
+                }
+                catch (Exception evt)
+                {
+                    Console.WriteLine(evt);
+                    return;
+                }
+                //Thread.EndCriticalRegion();
+            });
+            Thread childThread = new Thread(childref);
+            childThread.Start();
         }
     }
 }

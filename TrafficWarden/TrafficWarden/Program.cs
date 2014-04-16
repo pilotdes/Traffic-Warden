@@ -10,7 +10,7 @@ namespace TrafficWarden
     internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         private static void Main(string[] args)
         {
@@ -21,7 +21,8 @@ namespace TrafficWarden
                     game.Run();
                 }
             }
-            #region Catch Section
+                #region Catch Section
+
             catch (Exception e)
             {
                 if (File.Exists("Output.txt"))
@@ -45,16 +46,18 @@ namespace TrafficWarden
                     file.WriteLine(e);
                     Form test = new Form();
                     test.Text = "ERROR";
-                    test.Size=new Size(300,150);
+                    test.Size = new Size(300, 150);
                     Label message = new Label();
-                    message.Text = "Sorry, an error has occurred. please send the output and error logs to bomberdes@live.com, and i will fix it as soon as i can :)";
+                    message.Text =
+                        "Sorry, an error has occurred. please send the output and error logs to bomberdes@live.com, and i will fix it as soon as i can :)";
                     message.Parent = test;
                     message.Show();
-                    message.Dock=DockStyle.Fill;
+                    message.Dock = DockStyle.Fill;
                     test.ShowDialog();
                 }
                 Console.WriteLine(e);
             }
+
             #endregion
         }
     }

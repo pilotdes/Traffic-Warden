@@ -22,7 +22,6 @@ C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWa
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\ParallelTasks.dll
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\artemis.xml
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\ParallelTasks.xml
-C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\XNInterface.dll
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\pavement.xnb
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\road.xnb
 C:\Users\BomberDes\documents\visual studio 2013\Projects\TrafficWarden\TrafficWarden\TrafficWarden\bin\x86\Debug\Content\roadparts\Bases\intersection.xnb

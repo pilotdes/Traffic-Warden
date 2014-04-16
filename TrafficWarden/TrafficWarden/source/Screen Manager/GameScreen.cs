@@ -21,11 +21,11 @@ namespace TrafficWarden.source.Screen_Manager
         #region Properties
 
         /// <summary>
-        /// Normally when one screen is brought up over the top of another,
-        /// the first screen will transition off to make room for the new
-        /// one. This property indicates whether the screen is only a small
-        /// popup, in which case screens underneath it do not need to bother
-        /// transitioning off.
+        ///     Normally when one screen is brought up over the top of another,
+        ///     the first screen will transition off to make room for the new
+        ///     one. This property indicates whether the screen is only a small
+        ///     popup, in which case screens underneath it do not need to bother
+        ///     transitioning off.
         /// </summary>
         public bool IsPopup
         {
@@ -37,8 +37,8 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Indicates how long the screen takes to
-        /// transition on when it is activated.
+        ///     Indicates how long the screen takes to
+        ///     transition on when it is activated.
         /// </summary>
         public TimeSpan TransitionOnTime
         {
@@ -50,8 +50,8 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Indicates how long the screen takes to
-        /// transition off when it is deactivated.
+        ///     Indicates how long the screen takes to
+        ///     transition off when it is deactivated.
         /// </summary>
         public TimeSpan TransitionOffTime
         {
@@ -63,9 +63,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Gets the current position of the screen transition, ranging
-        /// from zero (fully active, no transition) to one (transitioned
-        /// fully off to nothing).
+        ///     Gets the current position of the screen transition, ranging
+        ///     from zero (fully active, no transition) to one (transitioned
+        ///     fully off to nothing).
         /// </summary>
         public float TransitionPosition
         {
@@ -77,9 +77,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Gets the current alpha of the screen transition, ranging
-        /// from 1 (fully active, no transition) to 0 (transitioned
-        /// fully off to nothing).
+        ///     Gets the current alpha of the screen transition, ranging
+        ///     from 1 (fully active, no transition) to 0 (transitioned
+        ///     fully off to nothing).
         /// </summary>
         public float TransitionAlpha
         {
@@ -88,7 +88,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Gets the current screen transition state.
+        ///     Gets the current screen transition state.
         /// </summary>
         public ScreenState ScreenState
         {
@@ -100,12 +100,12 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// There are two possible reasons why a screen might be transitioning
-        /// off. It could be temporarily going away to make room for another
-        /// screen that is on top of it, or it could be going away for good.
-        /// This property indicates whether the screen is exiting for real:
-        /// if set, the screen will automatically remove itself as soon as the
-        /// transition finishes.
+        ///     There are two possible reasons why a screen might be transitioning
+        ///     off. It could be temporarily going away to make room for another
+        ///     screen that is on top of it, or it could be going away for good.
+        ///     This property indicates whether the screen is exiting for real:
+        ///     if set, the screen will automatically remove itself as soon as the
+        ///     transition finishes.
         /// </summary>
         public bool IsExiting
         {
@@ -117,7 +117,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Checks whether this screen is active and can respond to user input.
+        ///     Checks whether this screen is active and can respond to user input.
         /// </summary>
         public bool IsActive
         {
@@ -133,7 +133,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Gets the manager that this screen belongs to.
+        ///     Gets the manager that this screen belongs to.
         /// </summary>
         public ScreenManager ScreenManager
         {
@@ -145,12 +145,12 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Gets the index of the player who is currently controlling this screen,
-        /// or null if it is accepting input from any player. This is used to lock
-        /// the game to a specific player profile. The main menu responds to input
-        /// from any connected gamepad, but whichever player makes a selection from
-        /// this menu is given control over all subsequent screens, so other gamepads
-        /// are inactive until the controlling player returns to the main menu.
+        ///     Gets the index of the player who is currently controlling this screen,
+        ///     or null if it is accepting input from any player. This is used to lock
+        ///     the game to a specific player profile. The main menu responds to input
+        ///     from any connected gamepad, but whichever player makes a selection from
+        ///     this menu is given control over all subsequent screens, so other gamepads
+        ///     are inactive until the controlling player returns to the main menu.
         /// </summary>
         public PlayerIndex? ControllingPlayer
         {
@@ -162,11 +162,11 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Gets the gestures the screen is interested in. Screens should be as specific
-        /// as possible with gestures to increase the accuracy of the gesture engine.
-        /// For example, most menus only need Tap or perhaps Tap and VerticalDrag to operate.
-        /// These gestures are handled by the ScreenManager when screens change and
-        /// all gestures are placed in the InputState passed to the HandleInput method.
+        ///     Gets the gestures the screen is interested in. Screens should be as specific
+        ///     as possible with gestures to increase the accuracy of the gesture engine.
+        ///     For example, most menus only need Tap or perhaps Tap and VerticalDrag to operate.
+        ///     These gestures are handled by the ScreenManager when screens change and
+        ///     all gestures are placed in the InputState passed to the HandleInput method.
         /// </summary>
         public GestureType EnabledGestures
         {
@@ -192,7 +192,7 @@ namespace TrafficWarden.source.Screen_Manager
         #region Initialization
 
         /// <summary>
-        /// Load graphics content for the screen.
+        ///     Load graphics content for the screen.
         /// </summary>
         public virtual void LoadContent()
         {
@@ -200,7 +200,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Unload content for the screen.
+        ///     Unload content for the screen.
         /// </summary>
         public virtual void UnloadContent()
         {
@@ -211,9 +211,9 @@ namespace TrafficWarden.source.Screen_Manager
         #region Update and Draw
 
         /// <summary>
-        /// Allows the screen to run logic, such as updating the transition position.
-        /// Unlike HandleInput, this method is called regardless of whether the screen
-        /// is active, hidden, or in the middle of a transition.
+        ///     Allows the screen to run logic, such as updating the transition position.
+        ///     Unlike HandleInput, this method is called regardless of whether the screen
+        ///     is active, hidden, or in the middle of a transition.
         /// </summary>
         public virtual void Update(GameTime gameTime, bool otherScreenHasFocus,
             bool coveredByOtherScreen)
@@ -269,7 +269,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Helper for updating the screen transition position.
+        ///     Helper for updating the screen transition position.
         /// </summary>
         private bool UpdateTransition(GameTime gameTime, TimeSpan time, int direction)
         {
@@ -299,9 +299,9 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// Allows the screen to handle user input. Unlike Update, this method
-        /// is only called when the screen is active, and not when some other
-        /// screen has taken the focus.
+        ///     Allows the screen to handle user input. Unlike Update, this method
+        ///     is only called when the screen is active, and not when some other
+        ///     screen has taken the focus.
         /// </summary>
         public virtual void HandleInput(InputState input)
         {
@@ -309,7 +309,7 @@ namespace TrafficWarden.source.Screen_Manager
 
 
         /// <summary>
-        /// This is called when the screen should draw itself.
+        ///     This is called when the screen should draw itself.
         /// </summary>
         public virtual void Draw(GameTime gameTime)
         {
@@ -320,9 +320,9 @@ namespace TrafficWarden.source.Screen_Manager
         #region Public Methods
 
         /// <summary>
-        /// Tells the screen to go away. Unlike ScreenManager.RemoveScreen, which
-        /// instantly kills the screen, this method respects the transition timings
-        /// and will give the screen a chance to gradually transition off.
+        ///     Tells the screen to go away. Unlike ScreenManager.RemoveScreen, which
+        ///     instantly kills the screen, this method respects the transition timings
+        ///     and will give the screen a chance to gradually transition off.
         /// </summary>
         public void ExitScreen()
         {

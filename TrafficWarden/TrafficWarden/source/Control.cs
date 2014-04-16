@@ -27,9 +27,9 @@ namespace TrafficWarden.source
 
         public Control()
         {
-        #if WINDOWS
+#if WINDOWS
             IsMouseVisible = true;
-        #endif
+#endif
 
             OutputLogging.initOutputting();
             OutputLogging.writeOutput("Initializing Control Class");

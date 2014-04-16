@@ -52,8 +52,8 @@ namespace TrafficWarden.source.Screens.Entitys
     #endregion
 
     /// <summary>
-    /// This class is the control class for an individual intersection with traffic lights
-    /// it identifies to its respective intersection via the IntersectionIdentifier variable
+    ///     This class is the control class for an individual intersection with traffic lights
+    ///     it identifies to its respective intersection via the IntersectionIdentifier variable
     /// </summary>
     internal class IntersectionInstance
     {
@@ -98,11 +98,10 @@ namespace TrafficWarden.source.Screens.Entitys
         private LightState state;
         private TrafficFlowDirection d;
 
-
         #endregion
 
         /// <summary>
-        /// The Unique identifier for the intersection instance
+        ///     The Unique identifier for the intersection instance
         /// </summary>
         public string IntersectionIdentifier
         {
@@ -121,7 +120,7 @@ namespace TrafficWarden.source.Screens.Entitys
 
 
         /// <summary>
-        /// Sets the intersection type
+        ///     Sets the intersection type
         /// </summary>
         public IntersectionType IntersectionType
         {
@@ -138,8 +137,8 @@ namespace TrafficWarden.source.Screens.Entitys
 
 
         /// <summary>
-        /// Sets how many lanes the intersection
-        /// has running through it
+        ///     Sets how many lanes the intersection
+        ///     has running through it
         /// </summary>
         public int NumberOfLanes
         {
@@ -156,9 +155,9 @@ namespace TrafficWarden.source.Screens.Entitys
 
 
         /// <summary>
-        /// Sets whether or not the intersection is controlled by
-        /// lights, and if it isn't, will then bypass all the players
-        /// input
+        ///     Sets whether or not the intersection is controlled by
+        ///     lights, and if it isn't, will then bypass all the players
+        ///     input
         /// </summary>
         public Boolean IsControlled
         {
@@ -175,7 +174,7 @@ namespace TrafficWarden.source.Screens.Entitys
 
 
         /// <summary>
-        /// Sets the Intersection Surface
+        ///     Sets the Intersection Surface
         /// </summary>
         public IntersectionSurface IntersectionSurface
         {
@@ -191,7 +190,7 @@ namespace TrafficWarden.source.Screens.Entitys
         }
 
         /// <summary>
-        /// Sets the current State of the lights
+        ///     Sets the current State of the lights
         /// </summary>
         public LightState CurrentLightState
         {
@@ -207,12 +206,12 @@ namespace TrafficWarden.source.Screens.Entitys
         }
 
         /// <summary>
-        /// Sets the Position of the intersection along the X axis
+        ///     Sets the Position of the intersection along the X axis
         /// </summary>
         public int PositionX;
 
         /// <summary>
-        /// Sets the position of the intersection along the Y axis
+        ///     Sets the position of the intersection along the Y axis
         /// </summary>
         public int PositionY;
 
@@ -237,8 +236,41 @@ namespace TrafficWarden.source.Screens.Entitys
 
         #region Initialization
 
+        //public IntersectionInstance(int X, int Y, IntersectionType type, IntersectionSurface surface,
+        //    LightState initialLightState, Boolean isControlledL, string ID, int numLanes, Boolean haspavement,
+        //    TrafficFlowDirection direction)
+        //{
+        //    OutputLogging.writeOutput("Starting new Intersection Instance. ID = " + ID);
+        //    OutputLogging.writeOutput(ID + " position(x,y): (" + X + ", " + Y + ")");
+
+        //    #region Setters
+
+        //    PositionX = X;
+        //    PositionY = Y;
+        //    IntersectionType = type;
+        //    IntersectionSurface = surface;
+        //    CurrentLightState = initialLightState;
+        //    IsControlled = isControlledL;
+        //    IntersectionIdentifier = ID;
+        //    NumberOfLanes = numLanes;
+        //    HasSideWalk = haspavement;
+        //    Direction = direction;
+
+        //    #endregion
+
+        //    #region Events
+
+        //    //OnClicked += OnIntersectionClicked;
+        //    //OnMouseOver += OnIntersectionMouseOver;
+        //    //OnLightStateChanged += OnOnLightStateChanged;
+
+        //    #endregion
+
+        //    EntityDict.AddEnity(this);
+        //}
+
         public IntersectionInstance(int X, int Y, IntersectionType type, IntersectionSurface surface,
-            LightState initialLightState, Boolean isControlledL, string ID, int numLanes, Boolean haspavement, TrafficFlowDirection direction)
+            Boolean isControlledL, string ID, Boolean haspavement, TrafficFlowDirection direction)
         {
             OutputLogging.writeOutput("Starting new Intersection Instance. ID = " + ID);
             OutputLogging.writeOutput(ID + " position(x,y): (" + X + ", " + Y + ")");
@@ -249,13 +281,10 @@ namespace TrafficWarden.source.Screens.Entitys
             PositionY = Y;
             IntersectionType = type;
             IntersectionSurface = surface;
-            CurrentLightState = initialLightState;
             IsControlled = isControlledL;
             IntersectionIdentifier = ID;
-            NumberOfLanes = numLanes;
             HasSideWalk = haspavement;
             Direction = direction;
-
 
             #endregion
 
@@ -314,7 +343,7 @@ namespace TrafficWarden.source.Screens.Entitys
                 {
                     //TODO add code to extend functionality
                     val = true;
-                    Console.WriteLine(IntersectionIdentifier+" Clicked");
+                    Console.WriteLine(IntersectionIdentifier + " Clicked");
                     ToggleDirection();
                     OutputLogging.writeOutput(IntersectionIdentifier + " Clicked");
                 }
@@ -333,7 +362,8 @@ namespace TrafficWarden.source.Screens.Entitys
             if (Direction == TrafficFlowDirection.Horizontal)
             {
                 Direction = TrafficFlowDirection.Vertical;
-            }else if (Direction==TrafficFlowDirection.Vertical)
+            }
+            else if (Direction == TrafficFlowDirection.Vertical)
             {
                 Direction = TrafficFlowDirection.Horizontal;
             }
@@ -344,7 +374,7 @@ namespace TrafficWarden.source.Screens.Entitys
         #region Draw and Update Methods
 
         /// <summary>
-        /// Draws the Intersection Instance onto the screen
+        ///     Draws the Intersection Instance onto the screen
         /// </summary>
         /// <param name="Spritebatch"></param>
         /// <param name="Sprite"></param>
@@ -367,7 +397,7 @@ namespace TrafficWarden.source.Screens.Entitys
                 }
                 else
                 {
-                    Spritebatch.Draw(DirectionArrowV, new Rectangle(PositionX, PositionY, tilesize,tilesize),
+                    Spritebatch.Draw(DirectionArrowV, new Rectangle(PositionX, PositionY, tilesize, tilesize),
                         Color.White);
                 }
                 //TODO add code that displays a large set of arrows and crosses to determine what way the traffic is flowing
@@ -377,7 +407,6 @@ namespace TrafficWarden.source.Screens.Entitys
 
         public void update(GameTime time)
         {
-            
         }
 
         #endregion

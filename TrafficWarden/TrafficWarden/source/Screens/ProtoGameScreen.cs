@@ -10,16 +10,16 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 using TrafficWarden.source.Screens.AI;
 using TrafficWarden.source.Screens.Entitys;
-using TrafficWarden.source.Screens.Entitys.Dictionarys;
 using TrafficWarden.source.Screen_Manager;
 
 namespace TrafficWarden.source.Screens
 {
     internal class ProtoGameScreen : GameScreen
     {
+        #region fields
 
         #region fields
-        #region fields
+
         private Texture2D test;
         private TrafficFlowSystem AIflow;
         private TrafficLightSystem AISystem;
@@ -28,11 +28,15 @@ namespace TrafficWarden.source.Screens
         private MouseState mouseState;
         private KeyboardState keyboardState;
         private Boolean firsttime = true;
+
         #endregion
+
         #region Background Fields
 
         private ContentManager man;
+
         #endregion
+
         #region Getters and Setters
 
         public ContentManager Content
@@ -48,8 +52,8 @@ namespace TrafficWarden.source.Screens
             set { man = value; }
         }
 
-
         #endregion
+
         #endregion
 
         public ProtoGameScreen(Enum Difficulty, Game game)
@@ -57,10 +61,10 @@ namespace TrafficWarden.source.Screens
             OutputLogging.writeOutput("Starting Prototypical Game Screen");
             AIflow = new TrafficFlowSystem(Difficulty);
             AISystem = new TrafficLightSystem(Difficulty);
-            intersection=new IntersectionInstance(150,150,IntersectionType.Crossroads, IntersectionSurface.Ashphalt, 
-            LightState.Green, true, "TEST", 2,true, TrafficFlowDirection.Horizontal);
-            intersection2=new IntersectionInstance(250,250,IntersectionType.Crossroads, IntersectionSurface.Tarmac,
-                LightState.Red, true, "Test2", 2, false, TrafficFlowDirection.Horizontal);
+            intersection = new IntersectionInstance(150, 150, IntersectionType.Crossroads, IntersectionSurface.Ashphalt,
+                 true, "TEST", true, TrafficFlowDirection.Horizontal);
+            intersection2 = new IntersectionInstance(250, 250, IntersectionType.Crossroads, IntersectionSurface.Tarmac,
+                 true, "Test2", false, TrafficFlowDirection.Horizontal);
         }
 
         public override void LoadContent()
